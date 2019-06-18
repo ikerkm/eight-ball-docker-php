@@ -8,7 +8,7 @@ class RouterManager
     {
             $route = $dispatcher->dispatch($requestMethod, $requestUri);
 
-            var_dump($route);
+        
             switch($route[0]){
                 case \FastRoute\Dispatcher::NOT_FOUND:
                    header("HTTP/1.0 404 Not Found");
@@ -17,7 +17,10 @@ class RouterManager
                 case \FastRoute\Dispatcher::FOUND:
                    $controller = $route[1];
                    $method = $route[2];
-                   $this->container->call($controller, $method);
+              
+                   if (is_callable($controller)){
+                    $this->displayData=$controller($method);
+                }
                 break;
                 case \FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
                    header("HTTP/1.0 405 Method not Allowed");

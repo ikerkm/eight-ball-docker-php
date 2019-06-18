@@ -1,7 +1,8 @@
 <?php
-
+echo "entrando en controller";
 class Controller
 {
+    
     private $array=[];
 
     public function __construct()
