@@ -3,6 +3,7 @@
 class Controller
 {
     private $array=[];
+   
 
     public function __construct()
     {
@@ -30,11 +31,11 @@ class Controller
     }
 
 
-    public function redirectTo(string $page)
+    public function index()
     {
-        $host= $_SERVER['HTTP_HOST'];
-        $uri= rtrim(dirname($_SERVER['PHP_SELF'],'/\\'));
-        header("Location: http://$host$uri/$page");
+        $result = array_rand ($this->array,1);
+
+        return $result;
     }
     
 }
