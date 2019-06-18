@@ -1,0 +1,13 @@
+{
+    "name": "tonomac/frontend",
+    "authors": [
+        {
+            "name": "Antoio",
+            "email": "tono.ineba@gmail.com"
+        }
+    ],
+    "require": { },
+    "scripts":{
+        "start": "php -S localhost:5001 "
+    }
+}
