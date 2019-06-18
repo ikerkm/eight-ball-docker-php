@@ -15,6 +15,11 @@ class RouterManager
                    echo "<h1>NOT FOUND </h1>";
                 break;
                 case \FastRoute\Dispatcher::FOUND:
+                header('Access-Control-Allow-Origin: *');
+                header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+                header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+                header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+         
                    $controller = $route[1];
                    $method = $route[2];
               
